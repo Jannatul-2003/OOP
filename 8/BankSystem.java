@@ -46,133 +46,138 @@ class Bank {
         String email = new String();
         String phone = new String();
         System.out.println("Client:\n1.Employee\n2.Customer\n3.Exit\nEnter your choice: ");
-        int choice ;
-        if(sc.hasNextInt()){
-        choice= sc.nextInt();
-        if (choice != 3) {
-            switch (choice) {
-                case 1:
-                    System.out.println("Enter the employee name: ");
-                    name = sc.next();
-                    System.out.println("Enter the email: ");
-                    email = sc.next();
-                    System.out.println("Enter the phone number: ");
-                    phone = sc.next();
-                    System.out.println("Enter your position: ");
-                    String position = sc.next();
-                    Bank.Employee employee = bank.new Employee(name, email, bankName, phone, position);
-                    bank.addEmployee(employee);
-                    break;
-                case 2:
-                    Customer customer = null;
-                    while (true) {
-                        System.out.println("1.Create Account.\n2.Login.\nEnter your choice:");
-                        if (sc.hasNextInt()) {
-                            int c = sc.nextInt();
-                            if (c == 1){
-                                bank.createAccount();
-                                System.out.print("\033[H\033[2J");
-                                System.out.flush();}
-                            else {
-                                customer = bank.login();
-                                if (customer != null)
-                                    break;
-                            }
-                        } else {
-                            System.out.println("Invalid input");
-                            sc.next();
-                        }
-                    }
-                    System.out.println("Customer: \n1.SinglePerson\n2.Organization\n3.Exit\nEnter your choice: ");
-                    if (sc.hasNextInt()) {
-                        choice = sc.nextInt();
-                        if (choice != 3) {
-                            switch (choice) {
-                                case 1:
-                                    // SinglePerson class used to create a singlePerson object
-                                    Bank.SinglePerson singlePerson = bank.new SinglePerson(name, email, bankName, phone,customer.getPassword());
-                                    System.out.println("Enter the BIN: ");
-                                    String bin = sc.next();
-                                    singlePerson.setBin(bin);
-                                    break;
-                                case 2:
-                                    // Organization class used to create a organization object
-                                    Bank.Organization organization = bank.new Organization(name, email, bankName, phone,customer.getPassword());
-                                    System.out.println("Enter the TIN: ");
-                                    String tin = sc.next();
-                                    organization.setTin(tin);
-                                    break;
-                            }
-                            Bank bank1 = bank;
-                            Bank.Account account = null;
-                            Bank.Account account1 = null;
-                            int flag = 1;
-                            while (true) {
-                                System.out.println("Account type:\n1.Savings\n2.Salary\n3.Exit\nEnter your choice: ");
-                                choice = sc.nextInt();
-                                if (choice != 3) {
-                                    System.out.println("Enter the balance: ");
-                                    double balance = sc.nextDouble();
-                                    System.out.println("Enter the investment period: ");
-                                    double investmentPeriod = sc.nextDouble();
-                                    switch (choice) {
-                                        case 1:
-                                            Bank.Savings savings = bank1.new Savings(customer,balance,investmentPeriod);
-                                            if (flag == 1)
-                                                account = savings;
-                                                flag = 0;
-                                            account1 = savings;
-                                            break;
-                                        case 2:
-                                            Bank.Salary salary = bank1.new Salary(customer, balance,investmentPeriod);
-                                            if (flag == 1)
-                                                account = salary;
-                                                flag=0;
-                                            account1 = salary;
-                                            break;
-                                    }
-                                    account1.BankName = bank1.getBankName();
-                                    customer.addAccount(account1);
-                                    System.out.println("Any other bank account:\n1.Yes\n2.No\nEnter your choice: ");
-                                    int ch = sc.nextInt();
-                                    if (ch == 1) {
-                                        System.out.println("Enter Bankname:");
-                                        String BankName1 = sc.next();
-                                        bank1 = new Bank(BankName1);
-                                    } else
+        int choice;
+        if (sc.hasNextInt()) {
+            choice = sc.nextInt();
+            if (choice != 3) {
+                switch (choice) {
+                    case 1:
+                        System.out.println("Enter the employee name: ");
+                        name = sc.next();
+                        System.out.println("Enter the email: ");
+                        email = sc.next();
+                        System.out.println("Enter the phone number: ");
+                        phone = sc.next();
+                        System.out.println("Enter your position: ");
+                        String position = sc.next();
+                        Bank.Employee employee = bank.new Employee(name, email, bankName, phone, position);
+                        bank.addEmployee(employee);
+                        break;
+                    case 2:
+                        Customer customer = null;
+                        while (true) {
+                            System.out.println("1.Create Account.\n2.Login.\nEnter your choice:");
+                            if (sc.hasNextInt()) {
+                                int c = sc.nextInt();
+                                if (c == 1) {
+                                    bank.createAccount();
+                                    System.out.print("\033[H\033[2J");
+                                    System.out.flush();
+                                } else {
+                                    customer = bank.login();
+                                    if (customer != null)
                                         break;
                                 }
+                            } else {
+                                System.out.println("Invalid input");
+                                sc.next();
                             }
-                            System.out.println("Operation to perform:\n1.Withdraw\n2.Deposit\n3.Exit\nEnter your choice: ");
-                            if (sc.hasNextInt()) {
+                        }
+                        System.out.println("Customer: \n1.SinglePerson\n2.Organization\n3.Exit\nEnter your choice: ");
+                        if (sc.hasNextInt()) {
                             choice = sc.nextInt();
                             if (choice != 3) {
                                 switch (choice) {
                                     case 1:
-                                        Bank.Withdraw withdraw = bank.new Withdraw(account);
-                                        withdraw.withdrawOptions();
+                                        // SinglePerson class used to create a singlePerson object
+                                        Bank.SinglePerson singlePerson = bank.new SinglePerson(name, email, bankName,
+                                                phone, customer.getPassword());
+                                        System.out.println("Enter the BIN: ");
+                                        String bin = sc.next();
+                                        singlePerson.setBin(bin);
                                         break;
                                     case 2:
-                                        Bank.SendMoneyToAccount deposit = bank.new SendMoneyToAccount(account);
-                                        deposit.SendMoneyOptions();
+                                        // Organization class used to create a organization object
+                                        Bank.Organization organization = bank.new Organization(name, email, bankName,
+                                                phone, customer.getPassword());
+                                        System.out.println("Enter the TIN: ");
+                                        String tin = sc.next();
+                                        organization.setTin(tin);
                                         break;
                                 }
+                                Bank bank1 = bank;
+                                Bank.Account account = null;
+                                Bank.Account account1 = null;
+                                int flag = 1;
+                                while (true) {
+                                    System.out
+                                            .println("Account type:\n1.Savings\n2.Salary\n3.Exit\nEnter your choice: ");
+                                    choice = sc.nextInt();
+                                    if (choice != 3) {
+                                        System.out.println("Enter the balance: ");
+                                        double balance = sc.nextDouble();
+                                        System.out.println("Enter the investment period: ");
+                                        double investmentPeriod = sc.nextDouble();
+                                        switch (choice) {
+                                            case 1:
+                                                Bank.Savings savings = bank1.new Savings(customer, balance,
+                                                        investmentPeriod);
+                                                if (flag == 1)
+                                                    account = savings;
+                                                flag = 0;
+                                                account1 = savings;
+                                                break;
+                                            case 2:
+                                                Bank.Salary salary = bank1.new Salary(customer, balance,
+                                                        investmentPeriod);
+                                                if (flag == 1)
+                                                    account = salary;
+                                                flag = 0;
+                                                account1 = salary;
+                                                break;
+                                        }
+                                        account1.BankName = bank1.getBankName();
+                                        customer.addAccount(account1);
+                                        System.out.println("Any other bank account:\n1.Yes\n2.No\nEnter your choice: ");
+                                        int ch = sc.nextInt();
+                                        if (ch == 1) {
+                                            System.out.println("Enter Bankname:");
+                                            String BankName1 = sc.next();
+                                            bank1 = new Bank(BankName1);
+                                        } else
+                                            break;
+                                    }
+                                }
+                                System.out.println(
+                                        "Operation to perform:\n1.Withdraw\n2.Deposit\n3.Exit\nEnter your choice: ");
+                                if (sc.hasNextInt()) {
+                                    choice = sc.nextInt();
+                                    if (choice != 3) {
+                                        switch (choice) {
+                                            case 1:
+                                                Bank.Withdraw withdraw = bank.new Withdraw(account);
+                                                withdraw.withdrawOptions();
+                                                break;
+                                            case 2:
+                                                Bank.SendMoneyToAccount deposit = bank.new SendMoneyToAccount(account);
+                                                deposit.SendMoneyOptions();
+                                                break;
+                                        }
+                                    }
+                                    bank.customerInfo(customer);
+
+                                }
                             }
-                            bank.customerInfo(customer);
+                        } else
+                            System.out.println("Invalid input");
 
-                        }
-                    }
-                    } else
-                        System.out.println("Invalid input");
-
+                }
             }
-        }    
-        System.out.println("Thank you for using the bank system.");
-        sc.close();
+            System.out.println("Thank you for using the bank system.");
+            sc.close();
 
-    }
-    else
-    System.out.println("Invalid input");
+        } else
+            System.out.println("Invalid input");
     }
 
     public void createAccount() {
@@ -264,7 +269,7 @@ class Bank {
 
     // Customer
     class Customer extends Client {// customer is of two types SinglePerson and Organization
-       // private String accountNumber;
+        // private String accountNumber;
         private String password;
         List<Account> ListNameAccounts;// A customer can have multiple accounts
 
@@ -273,10 +278,6 @@ class Bank {
             this.ListNameAccounts = new ArrayList<>();
             this.password = password;
         }
-
-        // public String getAccountNumber() {// private is only accessible within the class
-        //     return accountNumber;
-        // }
 
         public String getPassword() {
             return password;
@@ -341,7 +342,7 @@ class Bank {
         public Account(Customer customer, String accountType, double balance, double investmentPeriod) {
 
             this.BankName = customer.bankName;
-            //this.accountNumber = customer.accountNumber;
+            // this.accountNumber = customer.accountNumber;
             final long LIMIT = 10000000L;
             long id = System.currentTimeMillis() % LIMIT;
             this.accountNumber = "1" + String.valueOf(id);
@@ -418,7 +419,8 @@ class Bank {
         }
 
         public void SendMoneyOptions() {
-            System.out.println("Send Money To Account by:\n1.BkashWallet\n2.EFT\n3.BankReceipt\n4.Exit\nEnter your choice: ");
+            System.out.println(
+                    "Send Money To Account by:\n1.BkashWallet\n2.EFT\n3.BankReceipt\n4.Exit\nEnter your choice: ");
             Scanner input = new Scanner(System.in);
             int choice = input.nextInt();
             if (choice != 4) {
@@ -461,7 +463,8 @@ class Bank {
     }
 
 }
-public class BankS2{
+
+public class BankSystem {
     public static void main(String[] args) {
 
         Bank bank = new Bank();
