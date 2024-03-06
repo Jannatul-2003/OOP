@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 class Bank {
@@ -23,6 +24,15 @@ class Bank {
         return BankName;
     }
 
+    public boolean checkUser(String email, String password) {
+        for (Customer customer : ListNameCustomers) {
+            if (customer.email.equals(email) && customer.password.equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     class Client {// client is of two types customer and employee
         protected String name;
         protected String email;
@@ -38,33 +48,31 @@ class Bank {
     }
 
     // Employee
-    class Employee extends Customer {// Employee os of three types manager, officer and trainee//Employee can be
-                                     // customer
+    class Employee extends Client {// Employee os of three types manager, officer and trainee
         protected String position;
 
-        public Employee(String name, String email, String bankName, String phoneNumber, String position,
-                String accountNumber) {
-            super(name, email, bankName, phoneNumber, accountNumber);// super is used to call the constructor of Client
-                                                                     // class
+        public Employee(String name, String email, String bankName, String phoneNumber, String position) {
+            super(name, email, bankName, phoneNumber);// super is used to call the constructor of Client
+            // class
             this.position = position;
         }
     }
 
     class Manager extends Employee {
-        public Manager(String name, String email, String bankName, String phoneNumber, String accountNumber) {
-            super(name, email, bankName, phoneNumber, "Manager", accountNumber);
+        public Manager(String name, String email, String bankName, String phoneNumber) {
+            super(name, email, bankName, phoneNumber, "Manager");
         }
     }
 
     class Officer extends Employee {
-        public Officer(String name, String email, String bankName, String phoneNumber, String accountNumber) {
-            super(name, email, bankName, phoneNumber, "Officer", accountNumber);
+        public Officer(String name, String email, String bankName, String phoneNumber) {
+            super(name, email, bankName, phoneNumber, "Officer");
         }
     }
 
     class Trainee extends Employee {
-        public Trainee(String name, String email, String bankName, String phoneNumber, String accountNumber) {
-            super(name, email, bankName, phoneNumber, "Trainee", accountNumber);
+        public Trainee(String name, String email, String bankName, String phoneNumber) {
+            super(name, email, bankName, phoneNumber, "Trainee");
         }
     }
     // Emplyoee
@@ -72,12 +80,15 @@ class Bank {
     // Customer
     class Customer extends Client {// customer is of two types SinglePerson and Organization
         private String accountNumber;
-        List<Account> ListNameAccounts;//A customer can have multiple accounts
+        private String password;
+        List<Account> ListNameAccounts;// A customer can have multiple accounts
 
-        public Customer(String name, String email, String bankName, String phoneNumber, String accountNumber) {
+        public Customer(String name, String email, String bankName, String phoneNumber,String password) {
             super(name, email, bankName, phoneNumber);
-            this.accountNumber = accountNumber;
+            this.accountNumber = UUID.randomUUID().toString();
+
             this.ListNameAccounts = new ArrayList<>();
+            this.password = password;
         }
 
         public String getAccountNumber() {// private is only accessible within the class
@@ -97,8 +108,9 @@ class Bank {
 
         private String BIN;
 
-        public SinglePerson(String name, String email, String bankName, String phoneNumber, String accountNumber) {
-            super(name, email, bankName, phoneNumber, accountNumber);
+        public SinglePerson(String name, String email, String bankName, String phoneNumber,
+                String password) {
+            super(name, email, bankName, phoneNumber, password);
         }
 
         public String getBin() {
@@ -113,8 +125,9 @@ class Bank {
     class Organization extends Customer {
         private String TIN;
 
-        public Organization(String name, String email, String bankName, String phoneNumber, String accountNumber) {
-            super(name, email, bankName, phoneNumber, accountNumber);
+        public Organization(String name, String email, String bankName, String phoneNumber,
+                String password) {
+            super(name, email, bankName, phoneNumber, password);
         }
 
         public String getTin() {
@@ -300,15 +313,18 @@ public class BankSystem {
                 case 1:
                     System.out.println("Enter your position: ");
                     String position = sc.next();
-                    Employee employee = new Employee(name, email, bankName, phone, position);
+                    Bank.Employee employee = bank.new Employee(name, email, bankName, phone, position);
+                    bank.addEmployee(employee);
                     break;
                 case 2:
-                    System.out.println("Enter the account number: ");
-                    String accountNumber = sc.next();
-                    Customer customer = new Customer(name, email, bankName, phone,
-                            accountNumber);
+                    System.out.println("Enter the password: ");
+                    String password = sc.next();
+                    Bank.Customer customer = bank.new Customer(name, email, bankName, phone, password);
+                    bank.addCustomer(customer);
+                    System.out.println("Your account number: " + customer.getAccountNumber());
 
-                    Account account = null;
+
+                    Bank.Account account = null;
 
                     System.out.println("Customer: ");
                     System.out.println("1.SinglePerson. ");
@@ -320,16 +336,14 @@ public class BankSystem {
                         switch (choice) {
                             case 1:
                                 // SinglePerson class used to create a singlePerson object
-                                SinglePerson singlePerson = new SinglePerson(name, email, bankName, phone,
-                                        accountNumber);
+                                Bank.SinglePerson singlePerson = bank.new SinglePerson(name, email, bankName, phone, password);
                                 System.out.println("Enter the BIN: ");
                                 String bin = sc.next();
                                 singlePerson.setBin(bin);
                                 break;
                             case 2:
                                 // Organization class used to create a organization object
-                                Organization organization = new Organization(name, email, bankName, phone,
-                                        accountNumber);
+                                Bank.Organization organization = bank.new Organization(name, email, bankName, phone, password);
                                 System.out.println("Enter the TIN: ");
                                 String tin = sc.next();
                                 organization.setTin(tin);
@@ -348,16 +362,17 @@ public class BankSystem {
                             double investmentPeriod = sc.nextDouble();
                             switch (choice) {
                                 case 1:
-                                    Savings savings = new Savings(accountNumber, balance, investmentPeriod);
+                                    Bank.Savings savings = bank.new Savings(bankName, customer.getAccountNumber(), balance,
+                                            investmentPeriod);
                                     account = savings;
 
                                     break;
                                 case 2:
-                                    Salary salary = new Salary(accountNumber, balance, investmentPeriod);
+                                    Bank.Salary salary = bank.new Salary(bankName, customer.getAccountNumber(), balance,
+                                            investmentPeriod);
                                     account = salary;
                                     break;
                             }
-
                             System.out.println("Operation to perform: ");
                             System.out.println("1.Withdraw. ");
                             System.out.println("2.Deposit. ");
@@ -367,11 +382,11 @@ public class BankSystem {
                             if (choice != 3) {
                                 switch (choice) {
                                     case 1:
-                                        Withdraw withdraw = new Withdraw(account);
+                                        Bank.Withdraw withdraw = bank.new Withdraw(account);
                                         withdraw.withdrawOptions();
                                         break;
                                     case 2:
-                                        SendMoneyToAccount deposit = new SendMoneyToAccount(account);
+                                        Bank.SendMoneyToAccount deposit = bank.new SendMoneyToAccount(account);
                                         deposit.SendMoneyOptions();
                                         break;
                                 }
