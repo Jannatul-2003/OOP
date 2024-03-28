@@ -13,7 +13,7 @@ class Database {
 
     public List<Rank> getRankList(String courseName) {
         List<Rank> ranks = new ArrayList<>();
-    
+
         for (Student student : students) {
             double studentGrade = 0.0;
             for (Course c : student.totalCourses) {
@@ -27,15 +27,32 @@ class Database {
             rank.grade = studentGrade;
             ranks.add(rank);
         }
-    
+
         ranks.sort((r1, r2) -> Double.compare(r2.grade, r1.grade)); // Sort in descending order
-    
+
         return ranks;
     }
-    class Rank{
+
+    public List<Student> getComprehensiveList(String courseName) {
+        List<Student> std = new ArrayList<>();
+
+        for (Student student : students) {
+            for (Course c : student.totalCourses) {
+                if (c.courseName.equals(courseName)) {
+                    std = c.getStudents();
+                    return std;
+                    // break;
+                }
+            }
+        }
+        return std;
+    }
+
+    class Rank {
         Student student;
         double grade;
     }
+
     class Student {
         protected String name;
         protected String roll;
@@ -56,6 +73,7 @@ class Database {
             this.email = Student_Database.scanner.nextLine();
             this.totalCourses = new ArrayList<>();
             this.majorCourses = new ArrayList<>();
+            clear();
             TotalCourses(this);
             addStudent(this);
         }
@@ -144,7 +162,7 @@ class Database {
         }
         EvaluationCombination(course);
         student.setOptionalCourse(course);
-        //System.out.println("Hahaa");
+        // System.out.println("Hahaa");
         for (Course c : student.totalCourses) {
             student.cgpa += c.grade * c.credits;
         }
@@ -152,7 +170,7 @@ class Database {
     }
     // }
 
-    class Course {
+    abstract class Course {
         protected String courseName;
         protected String courseType;
         protected double credits;
@@ -179,7 +197,6 @@ class Database {
             return students;
         }
 
-        
     }
 
     class ArtificialIntelligence extends Course {
@@ -203,8 +220,7 @@ class Database {
         }
 
     }
-    
-    
+
     class OperationResearch extends Course {
         public OperationResearch() {
             this.courseName = "OperationResearch";
@@ -281,7 +297,7 @@ class Database {
             if (m == 100) {
                 Evaluation(course, arr);
                 isOn = false;
-                //System.out.println("Hahaa");
+                // System.out.println("Hahaa");
                 break;
             } else {
                 System.out.println("Marks should be 100. Try again.");
@@ -375,7 +391,8 @@ public class Student_Database {
         boolean isRunning = true;
         Database db = new Database();
         while (isRunning) {
-            System.out.println("1. Add Student\n2. See Overall Rank List\n3. Course Based Rank List\n4. Exit\nChoose one:");
+            System.out.println(
+                    "1. Add Student\n2. See Overall Rank List\n3. Course Based Rank List\n4. Get Comprehensive List\n5. Exit\nChoose one:");
             query = scanner.nextInt();
             switch (query) {
                 case 1:
@@ -385,8 +402,8 @@ public class Student_Database {
                     break;
                 case 2:
                     Database.overallRank o = db.new overallRank();
-                    o=null;
-                break;
+                    o = null;
+                    break;
                 case 3:
                     System.out.println("Select Course: ");
                     for (int j = 1; j < ara.length; j++) {
@@ -399,6 +416,17 @@ public class Student_Database {
                     }
                     break;
                 case 4:
+                    System.out.println("Select Course: ");
+                    for (int j = 1; j < ara.length; j++) {
+                        System.out.println(j + ". " + ara[j]);
+                    }
+                    int p = scanner.nextInt();
+                    List<Database.Student> s = db.getComprehensiveList(ara[p]);
+                    for (int i = 0; i < s.size(); i++) {
+                        System.out.println(i + 1 + ". Name: " + s.get(i).name);
+                    }
+                    break;
+                case 5:
                     isRunning = false;
                     System.out.println("Exiting...");
                     break;
