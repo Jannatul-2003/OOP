@@ -1,0 +1,108 @@
+﻿Milk added
+Cheese added
+Yogurt added
+Eggs added
+Cottagecheese added
+Butter added
+Wheatflour added
+Sugar added
+Honey added
+Almondmilk added
+Wholegrainbread added
+Whitebread added
+Applejuice added
+Orangejuice added
+Cannedtuna added
+Frozenpeas added
+Frozencorn added
+Frozenspinach added
+Frozencarrots added
+Soda added
+Chocolate added
+Coffee added
+Tea added
+Fruitpunch added
+Mineralwater added
+Spaghetti added
+Penne added
+Macaroni added
+Rice added
+Whiterice added
+Brownrice added
+Soymilk added
+Soysauce added
+Noodles added
+Tofu added
+Milk updated
+Cheese updated
+Yogurt updated
+Eggs updated
+Cottagecheese updated
+Butter updated
+Wheatflour updated
+Sugar updated
+Honey updated
+Almondmilk updated
+Wholegrainbread updated
+Whitebread updated
+Applejuice updated
+Orangejuice updated
+Cannedtuna updated
+Frozenpeas updated
+Frozencorn updated
+Frozenspinach updated
+Frozencarrots updated
+Soda updated
+Chocolate updated
+Coffee updated
+Tea updated
+Fruitpunch updated
+Mineralwater updated
+Spaghetti updated
+Penne updated
+Macaroni updated
+Rice updated
+Whiterice updated
+Brownrice updated
+Soymilk updated
+Soysauce updated
+Noodles updated
+Tofu updated
+Noodles removed
+Frozenspinach removed
+Chocolate removed
+Almondmilk ---- Quantity: 7 x Price: BDT. 2.00
+Applejuice ---- Quantity: 4 x Price: BDT. 2.00
+Brownrice ---- Quantity: 10 x Price: BDT. 0.75
+Butter ---- Quantity: 3 x Price: BDT. 2.50
+Cannedtuna ---- Quantity: 5 x Price: BDT. 1.80
+Cheese ---- Quantity: 7 x Price: BDT. 4.00
+Coffee ---- Quantity: 8 x Price: BDT. 2.50
+Cottagecheese ---- Quantity: 4 x Price: BDT. 3.00
+Eggs ---- Quantity: 15 x Price: BDT. 0.20
+Frozencarrots ---- Quantity: 7 x Price: BDT. 0.95
+Frozencorn ---- Quantity: 6 x Price: BDT. 0.85
+Frozenpeas ---- Quantity: 6 x Price: BDT. 0.90
+Fruitpunch ---- Quantity: 7 x Price: BDT. 1.50
+Honey ---- Quantity: 5 x Price: BDT. 3.50
+Macaroni ---- Quantity: 9 x Price: BDT. 0.80
+Milk ---- Quantity: 12 x Price: BDT. 2.00
+Mineralwater ---- Quantity: 12 x Price: BDT. 1.00
+Orangejuice ---- Quantity: 6 x Price: BDT. 2.50
+Penne ---- Quantity: 8 x Price: BDT. 0.70
+Rice ---- Quantity: 14 x Price: BDT. 0.65
+Soda ---- Quantity: 10 x Price: BDT. 0.80
+Soymilk ---- Quantity: 7 x Price: BDT. 2.00
+Soysauce ---- Quantity: 4 x Price: BDT. 1.50
+Spaghetti ---- Quantity: 10 x Price: BDT. 0.75
+Sugar ---- Quantity: 6 x Price: BDT. 0.90
+Tea ---- Quantity: 8 x Price: BDT. 2.00
+Tofu ---- Quantity: 7 x Price: BDT. 3.00
+Wheatflour ---- Quantity: 12 x Price: BDT. 1.10
+Whitebread ---- Quantity: 7 x Price: BDT. 1.20
+Whiterice ---- Quantity: 12 x Price: BDT. 0.70
+Wholegrainbread ---- Quantity: 5 x Price: BDT. 1.50
+Yogurt ---- Quantity: 10 x Price: BDT. 1.50
+Total cost: BDT. 357.45
+Total cost: BDT. 357.45
+Checkout complete

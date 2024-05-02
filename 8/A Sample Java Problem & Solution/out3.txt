@@ -1,0 +1,19 @@
+﻿Bread added
+Pasta added
+Rice added
+Croissant added
+Doughnut added
+Tea added
+Coffee added
+Bread updated
+Doughnut updated
+Bread ---- Quantity: 6 x Price: BDT. 1.20
+Coffee ---- Quantity: 8 x Price: BDT. 3.00
+Croissant ---- Quantity: 4 x Price: BDT. 2.50
+Doughnut ---- Quantity: 8 x Price: BDT. 1.75
+Pasta ---- Quantity: 10 x Price: BDT. 0.80
+Rice ---- Quantity: 8 x Price: BDT. 0.60
+Tea ---- Quantity: 10 x Price: BDT. 2.00
+Total cost: BDT. 88.00
+Total cost: BDT. 88.00
+Checkout complete

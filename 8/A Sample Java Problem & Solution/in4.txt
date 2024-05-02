@@ -1,0 +1,75 @@
+﻿ADD MiLK 10 2.00
+ADD cHeEse 5 4.00
+ADD yoGUrt 8 1.50
+ADD eggS 12 0.20
+ADD cOTTageCheEse 3 3.00
+ADD buTTer 2 2.50
+ADD whEAtFlour 10 1.10
+ADD sugAR 5 0.90
+ADD hoNeY 4 3.50
+ADD aLmondMilk 6 2.00
+ADD whOLEGrainBread 4 1.50
+ADD whITEBread 6 1.20
+ADD appLEJuice 3 2.00
+ADD orANGEJuice 5 2.50
+ADD caNnedTuna 4 1.80
+ADD frOzenPeAs 5 0.90
+ADD frOzenCorn 5 0.85
+ADD frOzenSpinach 4 1.20
+ADD frOzenCarrots 6 0.95
+ADD soda 8 0.80
+ADD chocolate 4 2.00
+ADD coFFee 7 2.50
+ADD tEa 6 2.00
+ADD fruITPunch 5 1.50
+ADD minERALWater 10 1.00
+ADD spAGhetti 8 0.75
+ADD penne 6 0.70
+ADD maCaroni 7 0.80
+ADD riCE 12 0.65
+ADD whiteRice 10 0.70
+ADD brownRice 8 0.75
+ADD soYMIlk 6 2.00
+ADD soYSauce 3 1.50
+ADD noOdles 10 0.70
+ADD tofu 5 3.00
+UPDATE MiLK 12
+UPDATE cHeEse 7
+UPDATE yoGUrt 10
+UPDATE eggS 15
+UPDATE cOTTageCheEse 4
+UPDATE buTTer 3
+UPDATE whEAtFlour 12
+UPDATE sugAR 6
+UPDATE hoNeY 5
+UPDATE aLmondMilk 7
+UPDATE whOLEGrainBread 5
+UPDATE whITEBread 7
+UPDATE appLEJuice 4
+UPDATE orANGEJuice 6
+UPDATE caNnedTuna 5
+UPDATE frOzenPeAs 6
+UPDATE frOzenCorn 6
+UPDATE frOzenSpinach 5
+UPDATE frOzenCarrots 7
+UPDATE soda 10
+UPDATE chocolate 6
+UPDATE coFFee 8
+UPDATE tEa 8
+UPDATE fruITPunch 7
+UPDATE minERALWater 12
+UPDATE spAGhetti 10
+UPDATE penne 8
+UPDATE maCaroni 9
+UPDATE riCE 14
+UPDATE whiteRice 12
+UPDATE brownRice 10
+UPDATE soYMIlk 7
+UPDATE soYSauce 4
+UPDATE noOdles 12
+UPDATE tofu 7
+REMOVE noOdles
+REMOVE frOzenSpinach
+REMOVE chocolate
+VIEW
+CHECKOUT

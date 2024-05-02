@@ -1,0 +1,70 @@
+﻿Chicken added
+Turkey added
+Beef added
+Pork added
+Lamb added
+Shrimp added
+Salmon added
+Tuna added
+Eggs added
+Milk added
+Cheese added
+Yogurt added
+Butter added
+Icecream added
+Cream added
+Cottagecheese added
+Milk updated
+Eggs updated
+Shrimp removed
+Chocolatemilk added
+Goatcheese added
+Salmon removed
+Yogurt updated
+Wheyprotein added
+Milk updated
+Almondmilk added
+Turkey updated
+Eggs updated
+Cheese updated
+Lamb removed
+Mackerel added
+Prawns added
+Beef updated
+Pork updated
+Chicken updated
+Almondmilk removed
+Butter removed
+Halloumi added
+Quark added
+Cottagecheese removed
+Sausage added
+Steak added
+Quark removed
+Prawns removed
+Mussels added
+Steak updated
+Tuna updated
+Yogurt updated
+Beef ---- Quantity: 12 x Price: BDT. 4.00
+Cheese ---- Quantity: 5 x Price: BDT. 2.50
+Chicken ---- Quantity: 8 x Price: BDT. 3.50
+Chocolatemilk ---- Quantity: 10 x Price: BDT. 1.00
+Cream ---- Quantity: 8 x Price: BDT. 1.50
+Eggs ---- Quantity: 10 x Price: BDT. 0.20
+Goatcheese ---- Quantity: 5 x Price: BDT. 3.00
+Halloumi ---- Quantity: 5 x Price: BDT. 2.50
+Icecream ---- Quantity: 6 x Price: BDT. 3.00
+Mackerel ---- Quantity: 8 x Price: BDT. 4.50
+Milk ---- Quantity: 15 x Price: BDT. 0.75
+Mussels ---- Quantity: 5 x Price: BDT. 6.00
+Pork ---- Quantity: 10 x Price: BDT. 3.75
+Sausage ---- Quantity: 8 x Price: BDT. 3.00
+Steak ---- Quantity: 5 x Price: BDT. 8.00
+Tuna ---- Quantity: 15 x Price: BDT. 2.75
+Turkey ---- Quantity: 10 x Price: BDT. 5.00
+Wheyprotein ---- Quantity: 5 x Price: BDT. 15.00
+Yogurt ---- Quantity: 8 x Price: BDT. 1.00
+Total cost: BDT. 511.00
+Total cost: BDT. 511.00
+Checkout complete

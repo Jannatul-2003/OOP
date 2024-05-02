@@ -1,0 +1,22 @@
+﻿Cake added
+Icecram added
+Brownsugar added
+Redmeat added
+Whitefish added
+Pasta added
+Salad added
+Smoothie added
+Almonds added
+Cake updated
+Icecram updated
+Brownsugar updated
+Smoothie removed
+Almonds ---- Quantity: 2 x Price: BDT. 4.00
+Brownsugar ---- Quantity: 5 x Price: BDT. 1.00
+Pasta ---- Quantity: 4 x Price: BDT. 2.50
+Redmeat ---- Quantity: 6 x Price: BDT. 5.00
+Salad ---- Quantity: 3 x Price: BDT. 3.00
+Whitefish ---- Quantity: 5 x Price: BDT. 7.00
+Total cost: BDT. 97.00
+Total cost: BDT. 97.00
+Checkout complete

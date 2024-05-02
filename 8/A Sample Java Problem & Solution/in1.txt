@@ -1,0 +1,19 @@
+﻿ADD AppLe 10 0.75
+ADD banana 15 0.50
+ADD ORange 7 0.80
+UPDATE AppLe 12
+ADD Mango 5 0.90
+ADD grape 8 0.60
+REMOVE OrAnge
+UPDATE banana 5
+ADD Cucumber 3 0.30
+UPDATE Grape 0
+VIEW
+ADD Cherry 2 1.00
+REMOVE cuCuMber
+UPDATE Mango 7
+VIEW
+UPDATE apple 10
+ADD Pineapple 4 1.20
+VIEW
+CHECKOUT

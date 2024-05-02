@@ -1,0 +1,33 @@
+﻿Apple added
+Banana added
+Orange added
+Apple updated
+Mango added
+Grape added
+Orange removed
+Banana updated
+Cucumber added
+Grape updated
+Apple ---- Quantity: 12 x Price: BDT. 0.75
+Banana ---- Quantity: 5 x Price: BDT. 0.50
+Cucumber ---- Quantity: 3 x Price: BDT. 0.30
+Mango ---- Quantity: 5 x Price: BDT. 0.90
+Total cost: BDT. 16.90
+Cherry added
+Cucumber removed
+Mango updated
+Apple ---- Quantity: 12 x Price: BDT. 0.75
+Banana ---- Quantity: 5 x Price: BDT. 0.50
+Cherry ---- Quantity: 2 x Price: BDT. 1.00
+Mango ---- Quantity: 7 x Price: BDT. 0.90
+Total cost: BDT. 19.80
+Apple updated
+Pineapple added
+Apple ---- Quantity: 10 x Price: BDT. 0.75
+Banana ---- Quantity: 5 x Price: BDT. 0.50
+Cherry ---- Quantity: 2 x Price: BDT. 1.00
+Mango ---- Quantity: 7 x Price: BDT. 0.90
+Pineapple ---- Quantity: 4 x Price: BDT. 1.20
+Total cost: BDT. 23.10
+Total cost: BDT. 23.10
+Checkout complete

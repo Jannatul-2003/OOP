@@ -1,0 +1,11 @@
+﻿ADD bRead 5 1.20
+ADD paSta 10 0.80
+ADD rICE 8 0.60
+ADD cROIssant 4 2.50
+ADD doUGhnut 6 1.75
+ADD tEa 10 2.00
+ADD coFFee 8 3.00
+UPDATE brEad 6
+UPDATE dOUGHnut 8
+VIEW
+CHECKOUT

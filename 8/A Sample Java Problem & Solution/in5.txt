@@ -1,0 +1,15 @@
+﻿ADD cAke 4 4.00
+ADD iceCRam 3 3.50
+ADD brOWnSugar 2 1.00
+ADD ReDMeat 6 5.00
+ADD wHiTeFish 5 7.00
+ADD pASTa 4 2.50
+ADD SALad 3 3.00
+ADD smoOthie 6 2.50
+ADD almoNDs 2 4.00
+UPDATE cAke 0
+UPDATE iceCRam -1
+UPDATE brOWnSugar 5
+REMOVE smoOthie
+VIEW
+CHECKOUT
